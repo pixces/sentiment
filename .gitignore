@@ -1,0 +1,9 @@
+# ignore all logs
+logs/
+library/config.php
+.DS_Store
+views/.DS_Store
+vendor/.DS_Store
+public/.DS_Store
+log/.DS_Store
+library/.DS_Store

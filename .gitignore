@@ -7,3 +7,4 @@ vendor/.DS_Store
 public/.DS_Store
 log/.DS_Store
 library/.DS_Store
+config.php.txt

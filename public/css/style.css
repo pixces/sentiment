@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    font-size: 14px;
+}
+
+.form-control.form-control-lg.input-search{
+    line-height: 2.15;
+    border-radius: 0.25rem;
+    height: auto;
+}
+
+.timeline-with-icons {
+    border-left: 1px solid hsl(0, 0%, 90%);
+    position: relative;
+    list-style: none;
+}
+
+.timeline-with-icons .timeline-item {
+    position: relative;
+}
+
+.timeline-with-icons .timeline-item:after {
+    position: absolute;
+    display: block;
+    top: 0;
+}
+
+.timeline-with-icons .timeline-icon {
+    position: absolute;
+    left: -48px;
+    background-color: #03a9f4;
+    color: white;
+    border-radius: 50%;
+    height: 31px;
+    width: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge-red{
+    background-color: #f44335;
+    background-image: linear-gradient(180deg,#f44335,#9f150a);
+}
+
+.badge-gray{
+    background-color: #7b809a;          
+    background-image: linear-gradient(180deg,#7b809a,#70737f);
+}
+
+.bg-blue{
+    background-color: #03a9f4;
+    background-image: linear-gradient(180deg,#03a9f4,#03a9f4);
+}
+
+.text-blue{
+    color: #03a9f4;            
+}
+
+.badge-green{
+    background-color: #4caf50;
+    background-image: linear-gradient(180deg,#4caf50,#2b902f);
+}        
+
+.badge-orange{
+    background-color: #f44335;
+    background-image: linear-gradient(180deg,#f44335,#f44335);
+}
+
+.badge-yellow{
+    background-color: #fb8c00;
+    background-image: linear-gradient(180deg,#fb8c00,#fb8c00);
+}
+
+.bg-gradient-blue{
+    background-image: linear-gradient(180deg,#40beec,#03a9f4);
+}
+
+.no-border{
+    border-bottom: 0;
+}
+
+.bg-summary{
+    background-image: linear-gradient(180deg,#e9ecef,#ced4da);
+}

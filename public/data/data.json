@@ -1,0 +1,17 @@
+[
+    {
+      "title": "Card 1",
+      "details": "Details for Card 1",
+      "link": "https://example.com/card1"
+    },
+    {
+      "title": "Card 2",
+      "details": "Details for Card 2",
+      "link": "https://example.com/card2"
+    },
+    {
+      "title": "Card 3",
+      "details": "Details for Card 3",
+      "link": "https://example.com/card3"
+    }
+  ]

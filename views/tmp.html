@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Cards with AJAX</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Card Example</h2>
+    <div class="row" id="cardContainer">
+        <!-- Card Skeletons will be added here dynamically -->
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+    // Function to add card skeletons
+    function addCardSkeletons() {
+        for (let i = 0; i < 3; i++) {  // Assuming you want to add 3 card skeletons
+            $('#cardContainer').append(`
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Loading...</h5>
+                            <p class="card-text">Loading...</p>
+                            <a href="#" class="btn btn-primary">Loading...</a>
+                        </div>
+                    </div>
+                </div>
+            `);
+        }
+    }
+
+    // Add card skeletons when the page loads
+    $(document).ready(function () {
+        addCardSkeletons();
+
+        // After 3 seconds, make an AJAX request to fetch data and populate cards
+        setTimeout(function () {
+            $.ajax({
+                url: 'tmp.php',  // Replace with the correct path to your PHP file
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    // Function to populate card data
+                    function populateCardData(cardIndex) {
+                        const card = data[cardIndex];
+                        const cardElement = $('#cardContainer').find('.card').eq(cardIndex);
+                        cardElement.find('.card-title').text(card.title);
+                        cardElement.find('.card-text').text(card.details);
+                        cardElement.find('.btn').attr('href', card.link).text('Learn More');
+                    }
+
+                    // Loop through the fetched data and populate cards
+                    for (let i = 0; i < data.length; i++) {
+                        populateCardData(i);
+                    }
+                },
+                error: function (error) {
+                    console.error('Error fetching data:', error);
+                }
+            });
+        }, 5000);
+    });
+</script>
+
+</body>
+</html>
